@@ -1,14 +1,13 @@
 
 <br><br>
 <div class="home">
-  <p>DataBinDinhProperties</p>
+  <p>EventBinDing</p>
   <h3>Chào :<a class="name">{{ name }}</a></h3>
 
   <input value="{{ name }}">
   <br><br>
-  <input [value]="name" title="Đây là : {{ name }}">
-  <br>
-  <input [value]="name" [title]="'Đây là : ' + name">
-  <br>
+  <input type="text" [(ngModel)]="name">
+  <br><br>
+  <button (click)="resetName()">Reset</button>
 </div>
 
