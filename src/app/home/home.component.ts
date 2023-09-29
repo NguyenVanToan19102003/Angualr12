@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-    public name = 'Toản Nguyễn'
+    public name = 'Toản Nguyễn';
+    public age = 19;
 
 }
+

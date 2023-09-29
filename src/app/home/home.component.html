@@ -1,14 +1,12 @@
 
 <br><br>
 <div class="home">
-  <p>DataBinDinhValue</p>
+  <p>DataBinDinhNGIF</p>
   <h3>Chào :<a class="name">{{ name }}</a></h3>
 
   <input value="{{ name }}">
-  <br><br>
-  <input [value]="name" title="Đây là : {{ name }}">
   <br>
-  <input [value]="name" [title]="'Đây là : ' + name">
-  <br>
+  <h4 *ngIf="age > 18">Bạn già quá !</h4>
+  <h4 *ngIf="age <= 18">Bạn trẻ quá !</h4>
 </div>
 
