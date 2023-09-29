@@ -1,13 +1,20 @@
 
 <br><br>
 <div class="home">
-  <p>EventBinDing</p>
-  <h3>Chào :<a class="name">{{ name }}</a></h3>
+  <p>ngTeamPlate</p>
+  <br><br>
+  <h3>Tuổi bạn là {{ age }}</h3>
+  <input type="text" [(ngModel)]="age">
+  <br><br>
+  <!-- *ngIf liên kết trong ra ngoài -->
+    <!-- <h3 *ngIf=" age > 18">Bạn già quá !</h3>
+    <h3 *ngIf=" age <= 18">Bạn trẻ quá !</h3> -->
 
-  <input value="{{ name }}">
-  <br><br>
-  <input type="text" [(ngModel)]="name">
-  <br><br>
-  <button (click)="resetName()">Reset</button>
+
+    <div *ngIf=" age <= 18; then tre ; else gia "></div>
+      <ng-template #gia><h3>Bạn <a class="tg">già</a> quá !</h3></ng-template>
+      <ng-template #tre><h3>Bạn <a class="tg">trẻ</a> quá !</h3></ng-template>
+
+
 </div>
 

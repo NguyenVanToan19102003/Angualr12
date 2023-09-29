@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
     public name = 'Toản Nguyễn'
-
+    public age = 18;
 
     public resetName() :void {
          console.log('resetName123');
