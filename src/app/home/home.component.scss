@@ -3,10 +3,21 @@
   padding: 10px;
   box-shadow: 5px 10px 18px red;
   width: 200px;
+  min-width: 300px;
 }
 .name{
  color: red;
 }
 .tg{
   color: red;
- }
+}
+#table2 {
+  border-collapse: collapse;
+  min-width: 250px;
+}
+.soam{
+  color: red;
+}
+.right{
+  text-align: right;
+}

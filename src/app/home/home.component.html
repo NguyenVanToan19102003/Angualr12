@@ -1,20 +1,33 @@
 
 <br><br>
 <div class="home">
-  <p>ngTeamPlate</p>
-  <br><br>
-  <h3>Tuổi bạn là {{ age }}</h3>
-  <input type="text" [(ngModel)]="age">
-  <br><br>
-  <!-- *ngIf liên kết trong ra ngoài -->
-    <!-- <h3 *ngIf=" age > 18">Bạn già quá !</h3>
-    <h3 *ngIf=" age <= 18">Bạn trẻ quá !</h3> -->
+  <p>*ngFor</p>
+  <h3>Form</h3>
+  <div *ngFor="let tc of traiCay; let i = 'index + 1'">
+      <li>{{i}}. {{ tc }}</li>
+  </div>
 
-
-    <div *ngIf=" age <= 18; then tre ; else gia "></div>
-      <ng-template #gia><h3>Bạn <a class="tg">già</a> quá !</h3></ng-template>
-      <ng-template #tre><h3>Bạn <a class="tg">trẻ</a> quá !</h3></ng-template>
-
+  <!-- Table -->
+  <br>
+  <table id="table2" border="1">
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>price</th>
+      <th>Giảm Giá</th>
+    </tr>
+    <tr *ngFor="let t of traiCay2; let i = 'index + 1 '">
+      <td>{{i}}</td>
+      <td>{{t.name}}</td>
+      <td class="right">
+        <span [ngClass]="{'soam': t.price < 0}">{{t.price}}</span>
+      </td>
+      <td>
+        <span *ngIf="t.giamGia">SP đang gảim giá</span>
+        <!-- <span>{{t.giamGia == true ? 'Giảm giá':'K giảm giá'}}</span> -->
+      </td>
+    </tr>
+  </table>
 
 </div>
 
