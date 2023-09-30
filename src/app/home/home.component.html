@@ -18,13 +18,17 @@
     </tr>
     <tr *ngFor="let t of traiCay2; let i = 'index + 1 '">
       <td>{{i}}</td>
-      <td>{{t.name}}</td>
+      <!-- | {{t.name | uppercase}} viết hoa tất cả chữ cái -->
+      <!-- | {{t.name | lowercase}} viết thường tất cả chữ cái -->
+      <td>{{t.name | uppercase}}</td>
       <td class="right">
-        <span [ngClass]="{'soam': t.price < 0}">{{t.price}}</span>
+        <!-- Cách 1 pipe định dạng htmt : {{t.price | currency:'USD':'symbol':'1.2'}} -->
+        <span [ngClass]="{'soam': t.price < 0}">{{t.price | currency:'USD':'symbol':'1.2'}}</span>
       </td>
       <td>
-        <span *ngIf="t.giamGia">SP đang gảim giá</span>
-        <!-- <span>{{t.giamGia == true ? 'Giảm giá':'K giảm giá'}}</span> -->
+        <!-- Cách 2 cài pipe vào project -->
+        <!-- Có thể chuyển đổi trả về kiểu dữ liệu khác  -->
+        <span>{{ t.giamGia | onsale | uppercase}}</span>
       </td>
     </tr>
   </table>
