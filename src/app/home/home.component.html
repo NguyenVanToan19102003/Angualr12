@@ -1,37 +1,26 @@
 
 <br><br>
 <div class="home">
-  <p>*ngFor</p>
+  <p>Cascading Combobox</p>
   <h3>Form</h3>
-  <div *ngFor="let tc of traiCay; let i = 'index + 1'">
+  <!-- <div *ngFor="let tc of traiCay; let i = 'index + 1'">
       <li>{{i}}. {{ tc }}</li>
-  </div>
+  </div> -->
 
   <!-- Table -->
   <br>
-  <table id="table2" border="1">
-    <tr>
-      <th>STT</th>
-      <th>Name</th>
-      <th>price</th>
-      <th>Giảm Giá</th>
-    </tr>
-    <tr *ngFor="let t of traiCay2; let i = 'index + 1 '">
-      <td>{{i}}</td>
-      <!-- | {{t.name | uppercase}} viết hoa tất cả chữ cái -->
-      <!-- | {{t.name | lowercase}} viết thường tất cả chữ cái -->
-      <td>{{t.name | uppercase}}</td>
-      <td class="right">
-        <!-- Cách 1 pipe định dạng htmt : {{t.price | currency:'USD':'symbol':'1.2'}} -->
-        <span [ngClass]="{'soam': t.price < 0}">{{t.price | currency:'USD':'symbol':'1.2'}}</span>
-      </td>
-      <td>
-        <!-- Cách 2 cài pipe vào project -->
-        <!-- Có thể chuyển đổi trả về kiểu dữ liệu khác  -->
-        <span>{{ t.giamGia | onsale | uppercase}}</span>
-      </td>
-    </tr>
-  </table>
-
+  Thành Phố
+  <select id="thanhpho" (change)="changeThanhPho($event)" class="form-select">
+    <option *ngFor="let tp of vietnamdata" value="{{ tp.thanhPho}}">
+      {{tp.thanhPho}}
+    </option>
+  </select>
+  <br><br>
+  Quận Huyện
+  <select id="quanhuyen" class="form-select">
+    <option *ngFor="let qh of quanHuyens" value="{{ qh}}">
+      {{ qh}}
+    </option>
+  </select>
 </div>
 
