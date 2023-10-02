@@ -13,4 +13,8 @@ export class CommonService {
 
     return n * n;
   }
+
+  public submitData(data : any): void{
+      console.log('gửi data lên Server : ' , data)
+  }
 }
