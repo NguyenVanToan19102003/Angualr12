@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HighLightDirective } from '../Directives/high-light.directive';
+import { CommonService } from '../Services/common.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -10,7 +11,16 @@ export class AboutComponent implements OnInit {
     public loginName = 'user';
     public myColor = 'red';
 
-    constructor(){}
+    public counter = 0;
+    public binhPhuong = 0;
 
-    ngOnInit(): void {}
+    constructor(private common : CommonService){
+
+    }
+
+    ngOnInit(): void {
+      this.counter = this.common.counter;
+      this.binhPhuong = this.common.luyThua(this.counter);
+      this.common.counter++;
+    }
 }
