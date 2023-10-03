@@ -1,9 +1,44 @@
 {
   "post": [
-    {"id" :1, "title" :"json-server", "author" : "typicode"}
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    {"id" :1, "body" :"some coment", "postId" : 1}
+    {
+      "id": 1,
+      "body": "some coment",
+      "postId": 1
+    },
+    {
+      "body": "6 múi",
+      "postId": 3,
+      "id": 2
+    },
+    {
+      "body": "8 múi",
+      "postId": 4,
+      "id": 4
+    },
+    {
+      "body": "8 múi",
+      "postId": 4,
+      "id": 5
+    },
+    {
+      "body": "8 múi",
+      "postId": 4,
+      "id": 6
+    },
+    {
+      "body": "8 múi",
+      "postId": 4,
+      "id": 7
+    }
   ],
-  "profile": {"name" : "typicode"}
+  "profile": {
+    "name": "typicode"
+  }
 }
